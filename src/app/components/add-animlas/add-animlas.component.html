@@ -1,0 +1,51 @@
+<div class="container p-4">
+  <div class="row">
+
+    <div class="col-md-6 offset-md-2">
+
+      <div class="card shadow">
+        <div class="card-body">
+          <h3 style="font-family: Pacifico">Animals</h3>
+          <form>
+            <div class="form-group">
+              name
+              <input type="text" name="nombre" [(ngModel)]="animal.nombre" placeholder="nombre"
+                class="form-control" autofocus>
+            </div>
+            <div class="form-group">
+              tipo
+              <input type="number" min="1" step="any" name="tipo" [(ngModel)]="animal.tipo"
+              rows="2" class="form-control" style="max-width: 100px">
+            </div>
+            <div class="form-group">
+              ubicaccion
+              <input type="number" min="1" step="any" name="ubicacion" [(ngModel)]="animal.ubicacion"
+                rows="2" class="form-control" style="max-width: 180px">
+            </div>
+            <hr>
+            <button class="btn btn-success btn-block" (click)="edit ? updateanimal() : saveAnimal()">
+              Guardar
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="card card-body shadow text-center">
+        <h3> {{animal.id == 0 ? '':animal.id}} </h3>
+        <h3>{{animal.nombre == '' ? 'animal Descripcion':animal.nombre}}
+        </h3>
+        <hr>
+        <p>
+          <Strong>tipo:</Strong> {{animal.tipo == 0 ? 'Escriba el tipo':animal.tipo}}
+        </p>
+        <p>
+          <strong>ubicacion:</strong> {{animal.ubicacion == 0 ? 'Escriba la Ubicacion':animal.ubicacion}}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
